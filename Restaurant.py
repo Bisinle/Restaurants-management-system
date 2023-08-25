@@ -12,4 +12,5 @@ class Restaurant:
 
 
 restaurant1 = Restaurant("Alabasta")
-print(restaurant1.get_name())
+restaurant2 = Restaurant("Konoha")
+# print(restaurant1.get_name())
