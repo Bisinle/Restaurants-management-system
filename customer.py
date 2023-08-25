@@ -1,7 +1,17 @@
 class Customer:
+    customer_List = list()
+    customer_count = 0
+
     def __init__(self, given_first_name="Hana", fam_name="Baker"):
         self._given_first_name = Customer.validate_user_input(given_first_name)
         self._fam_name = Customer.validate_user_input(fam_name)
+        self.customer_List_dict = {
+            "firs_name": self.given_name,
+            "family name": self.family_name,
+        }
+        Customer.customer_List.append(self.customer_List_dict)
+
+        Customer.customer_count += 1
 
     @staticmethod
     def validate_user_input(value1):
@@ -35,12 +45,21 @@ class Customer:
         else:
             return "fullname must me a string "
 
+    @staticmethod
+    def all():
+        return [object for index, object in enumerate((Customer.customer_List))]
 
-customer1 = Customer(78, 89)
-# customer1.given_name = 90
-print(customer1.given_name)
-print("-------------")
-print(customer1.family_name)
-print("------------")
-print(customer1.full_name)
-# customer1.family_name = 23
+
+customer1 = Customer("Allan", "Kunta")
+customer2 = Customer("Camila", "Carlos")
+customer3 = Customer("Abdi", "Jalwo")
+# print(Customer.customer_List[0].given_name)
+print(Customer.all())
+# print("----------------------")
+# # customer1.given_name = 90
+# print(customer1.given_name)
+# print("-------------")
+# print(customer1.family_name)
+# print("------------")
+# print(customer1.full_name)
+# # customer1.family_name = 23
