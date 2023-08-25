@@ -48,18 +48,21 @@ class Customer:
             return "fullname must me a string "
 
     # ----------------------------------------------------------------------------------
+    def create_customer_dict(self):
+        customer_object = {
+            "first_name": self.given_name,
+            "family_name": self.family_name,
+        }
+        return customer_object
 
     # class method that creates the instance dict and addes to the  customer_instances_list
     # and alos prevents duplicates inthe list of instances
     @classmethod
     def add_to_customer_instances_list(cls, self):
-        cls.customer_List_dict = {
-            "firs_name": self.given_name,
-            "family_name": self.family_name,
-        }
+        customer_object = cls.create_customer_dict(self)
         # check for duplicate and add if there are None
-        if cls.customer_List_dict not in cls.customer_instances_list:
-            cls.customer_instances_list.append(cls.customer_List_dict)
+        if customer_object not in cls.customer_instances_list:
+            cls.customer_instances_list.append(customer_object)
         else:
             return cls.customer_instances_list
 
@@ -76,7 +79,7 @@ customer2 = Customer("Camila", "Carlos")
 customer3 = Customer("Abdi", "Jalwo")
 
 # print(Customer.customer_List[0].given_name)
-print(customer1.all())
+# print(customer1.all())
 # print("----------------------")
 # # customer1.given_name = 90
 # print(customer1.given_name)

@@ -7,10 +7,10 @@ class Restaurant:
             print("Restaurant name must be a string")
 
     def get_name(self):
-        print("----------------")
         return self._name
 
 
 restaurant1 = Restaurant("Alabasta")
 restaurant2 = Restaurant("Konoha")
+restaurant3 = Restaurant("Sky_land")
 # print(restaurant1.get_name())
