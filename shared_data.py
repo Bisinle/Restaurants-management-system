@@ -37,19 +37,20 @@ review5 = Review(customer2, restaurant2, 5)
 
 # ------------------- RESTAURANT REVIEWS -------------------------------------
 # return all the restaurant reviews
-print(restaurant2.get_restuarant_reveiw())
+# print(len(restaurant2.get_restuarant_reveiw()))
+# print(restaurant2.get_restuarant_reveiw())
 # -------------------- RESTUARANT UNIQUE CUSTOMERS ---------------------------
 # print(len(restaurant1.get_customer_that_gave_the_restaurant_review()))
 # print((restaurant1.get_customer_that_gave_the_restaurant_review()))
-# all_reviews = Review.print_all_reviews()
 # Customer.get_rev(all_reviews)
-# # print(Customer.review_list)
 
 
-# ------------------- CUSTOMER METHODS -------------------------------------
-# print("-------------------------")
-print(customer3.add_review(restaurant5, 8))
-print(customer3.restaurants_reviewed())
+# ------------------- CUSTOMER METHODS get and add reviews -------------------------------------
+
+# (customer3.add_review(restaurant5, 8)) # creates a new review and associates it with that customer and restaurant.
+# print(customer3.restaurants_reviewed()) # Returns a **unique** list of all restaurants a customer has reviewed
+# print((all_reviews))
+# print(customer3.restaurants_reviewed())
 # print("-------------------------")
 
 

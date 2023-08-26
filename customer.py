@@ -75,16 +75,20 @@ class Customer:
     def restaurants_reviewed(self):
         from review import Review
 
-        review_list = Review.print_all_reviews()
+        review_list = Review.REVIEW_LIST
+        # print((Review.REVIEW_LIST))
+
         unique_restaurant_list = list()
 
-        for restaurant in review_list:
-            if restaurant["full_name"] == self.full_name():
-                unique_restaurant_list.append(restaurant["restaurant_name"])
-            else:
-                return f"{self.full_name()} has given no reviews to {restaurant['restaurant_name']}"
+        for customer in Review.REVIEW_LIST:
+            if customer["full_name"] == self.full_name():
+                unique_restaurant_list.append(customer["restaurant_name"])
 
-        return set(unique_restaurant_list)
+        return (
+            set(unique_restaurant_list)
+            if len(unique_restaurant_list) > 0
+            else f"{self.full_name()} has not given reviews "
+        )
 
     # ----------------------------------------------------------------------------------
     #   - given a **restaurant object** and a star rating (as an integer), creates a new review and associates it with that customer and restaurant.
@@ -92,6 +96,8 @@ class Customer:
         from review import Review
 
         new_review = Review(self, resaurant, rating)
+        # print(len(Review.REVIEW_LIST))
+        # Review.REVIEW_LIST.append(new_review)
 
 
 customer3 = Customer("Abdi", "Jalwo")
