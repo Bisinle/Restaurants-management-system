@@ -1,17 +1,17 @@
-from customer import *
-from Restaurant import *
-
-
 class Review:
-    review_list = list()
+    REVIEW_LIST = []
 
     def __init__(self, customer, restaurant, rating):
         # imported function from Customer
-        self._customer = Customer.create_customer_dict(customer)
+        from customer import Customer
+        from restaurant import Restaurant
+
+        self._customer = Customer.full_name(customer)
         # imported functions form Restaurant
         self._restaurant = Restaurant.get_name(restaurant)
         self._rating = Review.validate_integer(rating)
-        self.creat_review_object(self)
+        self_create_obj = Review.creat_review_object(self)
+        self.add_review_to_list(self_create_obj)
 
     # ----------------------------------------------------------------------------------
     # method to validate if the rating is an integer or not
@@ -34,36 +34,43 @@ class Review:
         self._rating = rating_value
 
     # ----------------------------------------------------------------------------------
+    # creates the reviw object using the customer , restaurant and  rating details
     @classmethod
     def creat_review_object(cls, self):
-        first_name = self._customer["first_name"]
-        family_name = self._customer["family_name"]
-
         review_object = {
-            "first_name": first_name,
-            "family_name": family_name,
+            "full_name": self._customer,
             "restaurant_name": self._restaurant,
             "rating": self._rating,
         }
         Review.add_review_to_list(review_object)
 
+    # ----------------------------------------------------------------------------------
+    # adds the review object to the review_list
     @classmethod
     def add_review_to_list(cls, object):
-        if object not in cls.review_list:
-            cls.review_list.append(object)
+        if object not in cls.REVIEW_LIST:
+            cls.REVIEW_LIST.append(object)
         else:
-            return cls.review_list
+            return cls.REVIEW_LIST
 
     # ----------------------------------------------------------------------------------
+    # return a list of all the review details, customr, restaurant, rating
     @classmethod
     def print_all_reviews(cls):
-        return [review for review in cls.review_list]
+        return [review for review in cls.REVIEW_LIST]
 
+    # ----------------------------------------------------------------------------------
+    # return  the customer that gave that specific reveiw
+    @property
+    def customer_name(self):
+        return self._customer
 
-review1 = Review(customer1, restaurant1, 4)
-review2 = Review(customer1, restaurant2, 2)
-review3 = Review(customer1, restaurant3, 5)
-# print(Review.print_all_reviews())
+    # ----------------------------------------------------------------------------------
+    # return the restaurant that this review belongs to
+    @property
+    def restaurant(self):
+        return self._restaurant
+
 
 # print(review1.rating)
 # print(review2.rating)

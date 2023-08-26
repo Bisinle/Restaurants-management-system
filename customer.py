@@ -40,7 +40,6 @@ class Customer:
 
     # ----------------------------------------------------------------------------------
 
-    @property
     def full_name(self):
         if isinstance(self.family_name, str) and isinstance(self.given_name, str):
             return "{} {}".format(self.family_name, self.given_name)
@@ -72,11 +71,21 @@ class Customer:
         return [instances for instances in cls.customer_instances_list]
 
     # ----------------------------------------------------------------------------------
+    # Returns a **unique** list of all restaurants a customer has reviewed
+
+    @classmethod
+    def restaurants_reviewed(cls):
+        from review import Review  # import list reviews from review module
+
+        review_list = Review.REVIEW_LIST
+        print("-----------------------")
+        print(review_list)
+        print("-----------------------")
 
 
-customer1 = Customer("Allan", "Kunta")
-customer2 = Customer("Camila", "Carlos")
 customer3 = Customer("Abdi", "Jalwo")
+print(customer3.restaurants_reviewed())
+
 
 # print(Customer.customer_List[0].given_name)
 # print(customer1.all())
