@@ -10,8 +10,9 @@ class Review:
         # imported functions form Restaurant
         self._restaurant = Restaurant.get_name(restaurant)
         self._rating = Review.validate_integer(rating)
-        self_create_obj = Review.creat_review_object(self)
-        self.add_review_to_list(self_create_obj)
+        self.creat_review_object(self)
+
+        # self.get = Restaurant.get_data_from_review(Review.REVIEW_LIST)
 
     # ----------------------------------------------------------------------------------
     # method to validate if the rating is an integer or not
