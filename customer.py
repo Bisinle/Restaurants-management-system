@@ -1,6 +1,6 @@
 class Customer:
     customer_instances_list = list()
-    customer_count = 0
+    review_list = []
 
     def __init__(self, given_first_name="Hana", fam_name="Baker"):
         self._given_first_name = Customer.validate_user_input(given_first_name)
@@ -71,20 +71,31 @@ class Customer:
         return [instances for instances in cls.customer_instances_list]
 
     # ----------------------------------------------------------------------------------
-    # Returns a **unique** list of all restaurants a customer has reviewed
+    # return unique restaurants the cusomter has reviewed
+    def restaurants_reviewed(self):
+        from review import Review
 
-    @classmethod
-    def restaurants_reviewed(cls):
-        from review import Review  # import list reviews from review module
+        review_list = Review.print_all_reviews()
+        unique_restaurant_list = list()
 
-        review_list = Review.REVIEW_LIST
-        print("-----------------------")
-        print(review_list)
-        print("-----------------------")
+        for restaurant in review_list:
+            if restaurant["full_name"] == self.full_name():
+                unique_restaurant_list.append(restaurant["restaurant_name"])
+            else:
+                return f"{self.full_name()} has given no reviews to {restaurant['restaurant_name']}"
+
+        return set(unique_restaurant_list)
+
+    # ----------------------------------------------------------------------------------
+    #   - given a **restaurant object** and a star rating (as an integer), creates a new review and associates it with that customer and restaurant.
+    def add_review(self, resaurant, rating):
+        from review import Review
+
+        new_review = Review(self, resaurant, rating)
 
 
 customer3 = Customer("Abdi", "Jalwo")
-print(customer3.restaurants_reviewed())
+# print(customer3.restaurants_reviewed())
 
 
 # print(Customer.customer_List[0].given_name)

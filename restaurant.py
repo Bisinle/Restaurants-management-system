@@ -38,11 +38,3 @@ class Restaurant:
             else:
                 return unique_customer
         return set(unique_customer)
-
-
-"""
-
-
-[[{'first_name': 'Abdi', 'family_name': 'Jalwo', 'restaurant_name': 'Sky_land', 'rating': 1}, {'first_name': 'Allan', 'family_name': 'Kunta', 'restaurant_name': 'Alabasta', 'rating': 2}, {'first_name': 'Abdi', 'family_name': 'Jalwo', 'restaurant_name': 'Konoha', 'rating': 7}, {'first_name': 'Allan', 'family_name': 'Kunta', 'restaurant_name': 'Sky_land', 'rating': 9}, {'first_name': 'Camila', 'family_name': 'Carlos', 'restaurant_name': 'Marita', 'rating': 5}, {'first_name': 'Camila', 'family_name': 'Carlos', 'restaurant_name': 'Konoha', 'rating': 5}]]
-
-"""

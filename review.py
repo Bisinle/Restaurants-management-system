@@ -12,8 +12,6 @@ class Review:
         self._rating = Review.validate_integer(rating)
         self.creat_review_object(self)
 
-        # self.get = Restaurant.get_data_from_review(Review.REVIEW_LIST)
-
     # ----------------------------------------------------------------------------------
     # method to validate if the rating is an integer or not
     @staticmethod
