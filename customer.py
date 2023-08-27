@@ -47,18 +47,12 @@ class Customer:
             return "fullname must me a string "
 
     # ----------------------------------------------------------------------------------
-    def create_customer_dict(self):
-        customer_object = {
-            "first_name": self.given_name,
-            "family_name": self.family_name,
-        }
-        return customer_object
-
     # class method that creates the instance dict and addes to the  customer_instances_list
     # and alos prevents duplicates inthe list of instances
     @classmethod
     def add_to_customer_instances_list(cls, self):
-        customer_object = cls.create_customer_dict(self)
+        # calling the method that pust the customer
+        customer_object = self.full_name()
         # check for duplicate and add if there are None
         if customer_object not in cls.customer_instances_list:
             cls.customer_instances_list.append(customer_object)

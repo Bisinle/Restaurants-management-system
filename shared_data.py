@@ -32,9 +32,9 @@ review1 = Review(customer2, restaurant2, 1)
 review3 = Review(customer1, restaurant2, 7)
 review5 = Review(customer2, restaurant5, 5)
 review5 = Review(customer2, restaurant2, 5)
-review5 = Review(customer2, restaurant2, 5)
-listOfReview = Review.REVIEW_LIST
-# print(len(listOfReview))
+# review5 = Review(customer2, restaurant2, 5) same review being added again
+# listOfReview = Review.REVIEW_LIST
+# print(len(listOfReview)) # see the length of list to ccheck if it has increased when the same review is added
 # print(review1.restaurant)
 
 
@@ -48,8 +48,11 @@ listOfReview = Review.REVIEW_LIST
 # Customer.get_rev(all_reviews)
 
 
-# ------------------- CUSTOMER METHODS get and add reviews -------------------------------------
+# ------------------- CUSTOMER list -------------------------------------
+print(Customer.customer_instances_list)
 
+
+# -----------------------------------  CUSTOMERget and add reviews------------------
 # (customer3.add_review(restaurant5, 8)) # creates a new review and associates it with that customer and restaurant.
 # print(customer3.restaurants_reviewed()) # Returns a **unique** list of all restaurants a customer has reviewed
 # print((all_reviews))
