@@ -29,8 +29,10 @@ git clone https://github.com/Bisinle/Restaurants-management-system
 ### 2. cd into the project director
 
 ```
-cd code-challenges
+cd src
 ```
+
+### 3. open shared_data.py and test the methods
 
 ## Authors & License
 
