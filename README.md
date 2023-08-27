@@ -1,5 +1,8 @@
 # Restaurant Review Management System
 
+![Vscode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
+
 General Description:
 
 Tthis project consists of multiple Python modules (customer.py, restaurant.py, review.py, and share_data.py) that collectively implement a system for managing customer reviews for different restaurants. It models a scenario where customers can leave reviews for various restaurants, and the system allows for the management of customers, restaurants, and reviews.
@@ -13,3 +16,26 @@ Tthis project consists of multiple Python modules (customer.py, restaurant.py, r
 3. 'Reviews' are managed by the Review class in review.py. Reviews are associated with customers and restaurants, and their details are stored in the REVIEW_LIST.
 
 4. The 'share_data.py' module demonstrates interactions between customers, restaurants, and reviews. It creates instances of customers, restaurants, and reviews, and showcases various methods provided by these classes.
+
+## Project Setup
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/Bisinle/phase3-code-challenger
+
+```
+
+### 2. cd into the project director
+
+```
+cd code-challenges
+```
+
+## Authors & License
+
+Authored by:
+
+[Abdiwadud Mohammed](https://github.com/Bisinle)
+
+Licensed under the [MIT License](LICENSE) - see the [LICENSE](LICENSE) file for details.
