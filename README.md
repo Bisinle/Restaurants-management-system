@@ -22,7 +22,7 @@ Tthis project consists of multiple Python modules (customer.py, restaurant.py, r
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/Bisinle/phase3-code-challenger
+git clone https://github.com/Bisinle/Restaurants-management-system
 
 ```
 
