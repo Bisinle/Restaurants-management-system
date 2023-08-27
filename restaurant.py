@@ -1,4 +1,9 @@
+from review import Review  # import list reviews from review module
+
+
 class Restaurant:
+    all_review = Review.REVIEW_LIST
+
     def __init__(self, name="CJ"):
         self._name = ""
 
@@ -15,8 +20,6 @@ class Restaurant:
     # ----------------------------------------------------------------------------------
     # get restaurant review
     def get_restuarant_reveiw(self):
-        from review import Review  # import list reviews from review module
-
         review_list = Review.print_all_reviews()
 
         return [
@@ -37,4 +40,15 @@ class Restaurant:
 
             else:
                 return unique_customer
-        return set(unique_customer)
+        return list(set(unique_customer))
+
+    def retaurant_average_star_rating(self):
+        return sum(
+            [
+                rating["rating"]
+                for rating in self.all_review
+                if rating["restaurant_name"] == self._name
+            ]
+        ) / sum(
+            1 for rating in self.all_review if rating["restaurant_name"] == self._name
+        )

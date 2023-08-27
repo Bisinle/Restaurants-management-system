@@ -33,8 +33,8 @@ review4 = Review(customer1, restaurant1, 9)
 review2 = Review(customer1, restaurant4, 2)
 review1 = Review(customer2, restaurant2, 1)
 review3 = Review(customer1, restaurant2, 7)
-review5 = Review(customer2, restaurant5, 5)
-review5 = Review(customer2, restaurant2, 5)
+review5 = Review(customer2, restaurant1, 5)
+review5 = Review(customer2, restaurant1, 6)
 # review5 = Review(customer2, restaurant2, 5) same review being added again
 # listOfReview = Review.REVIEW_LIST
 # print(len(listOfReview)) # see the length of list to ccheck if it has increased when the same review is added
@@ -45,18 +45,24 @@ review5 = Review(customer2, restaurant2, 5)
 # return all the restaurant reviews
 # print(len(restaurant2.get_restuarant_reveiw()))
 # print(restaurant2.get_restuarant_reveiw())
+
 # -------------------- RESTUARANT UNIQUE CUSTOMERS ---------------------------
 # print(len(restaurant1.get_customer_that_gave_the_restaurant_review()))
 # print((restaurant1.get_customer_that_gave_the_restaurant_review()))
 # Customer.get_rev(all_reviews)
 
+# -------------------- RESTUARANT VERAGE STAR RATING ---------------------------
+# print(restaurant2.retaurant_average_star_rating())
 
-# ------------------- CUSTOMER list of all the customers -------------------------------------
+
+# -----------------------------------AGGREGATE AND ASSOCIATION METHODS-----------------------------
+
+# ------------------- CUSTOMER list of all the customers --------
 # return a list containing all the cutomers we have
 # print(Customer.customer_instances_list)
 
 
-# -----------------------------------  CUSTOMERget and add reviews------------------
+# ------------------ CUSTOMERget and add reviews----------------
 
 # creates a new review and associates it with that customer and restaurant.
 # -- see the number of review the customer gave hsoudl be none but adding areview, the number shour change
@@ -67,12 +73,12 @@ review5 = Review(customer2, restaurant2, 5)
 # print((all_reviews))
 # print(customer1.restaurants_reviewed())
 
-# ------------------- CUSTOMER number of reviews -------------------------------------
+# ------------------- CUSTOMER number of reviews --------------------
 # print(customer2.customer_num_of_reviews())
 # print(customer3.customer_num_of_reviews())
 # print(Customer.customer_num_of_reviews)
 
-# --------------------- customer total number of revies --------------------------
+# --------------------- customer total number of revies -------------
 # print(customer3.customer_num_of_reviews())
 # customer3.add_review(restaurant5, 8)
 
