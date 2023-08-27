@@ -50,7 +50,7 @@ class Review:
         if object not in cls.REVIEW_LIST:
             cls.REVIEW_LIST.append(object)
         else:
-            return cls.REVIEW_LIST
+            print("Review already Exists")
 
     # ----------------------------------------------------------------------------------
     # return a list of all the review details, customr, restaurant, rating

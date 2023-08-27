@@ -96,8 +96,6 @@ class Customer:
         from review import Review
 
         new_review = Review(self, resaurant, rating)
-        # print(len(Review.REVIEW_LIST))
-        # Review.REVIEW_LIST.append(new_review)
 
 
 customer3 = Customer("Abdi", "Jalwo")

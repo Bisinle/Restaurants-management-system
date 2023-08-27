@@ -32,6 +32,9 @@ review1 = Review(customer2, restaurant2, 1)
 review3 = Review(customer1, restaurant2, 7)
 review5 = Review(customer2, restaurant5, 5)
 review5 = Review(customer2, restaurant2, 5)
+review5 = Review(customer2, restaurant2, 5)
+listOfReview = Review.REVIEW_LIST
+# print(len(listOfReview))
 # print(review1.restaurant)
 
 
@@ -50,8 +53,8 @@ review5 = Review(customer2, restaurant2, 5)
 # (customer3.add_review(restaurant5, 8)) # creates a new review and associates it with that customer and restaurant.
 # print(customer3.restaurants_reviewed()) # Returns a **unique** list of all restaurants a customer has reviewed
 # print((all_reviews))
-# print(customer3.restaurants_reviewed())
-# print("-------------------------")
+# print(customer1.restaurants_reviewed())
+# --------------------- customer total number of revies --------------------------
 
 
 """
