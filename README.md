@@ -3,7 +3,7 @@
 ![Vscode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
 
-General Description:
+### General Description:
 
 Tthis project consists of multiple Python modules (customer.py, restaurant.py, review.py, and share_data.py) that collectively implement a system for managing customer reviews for different restaurants. It models a scenario where customers can leave reviews for various restaurants, and the system allows for the management of customers, restaurants, and reviews.
 
@@ -34,7 +34,7 @@ cd src
 
 ### 3. open shared_data.py and test the methods
 
-## Authors & License
+## <us> Authors & License</u>
 
 Authored by:
 
