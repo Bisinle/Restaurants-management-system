@@ -1,6 +1,9 @@
+from review import Review
+
+
 class Customer:
     customer_instances_list = list()
-    review_list = []
+    all_review = Review.REVIEW_LIST
 
     def __init__(self, given_first_name="Hana", fam_name="Baker"):
         self._given_first_name = Customer.validate_user_input(given_first_name)
@@ -54,10 +57,7 @@ class Customer:
         # calling the method that pust the customer
         customer_object = self.full_name()
         # check for duplicate and add if there are None
-        if customer_object not in cls.customer_instances_list:
-            cls.customer_instances_list.append(customer_object)
-        else:
-            return cls.customer_instances_list
+        cls.customer_instances_list.append(customer_object)
 
     # print the instance list in customer_instances_list
     @classmethod
@@ -67,19 +67,14 @@ class Customer:
     # ----------------------------------------------------------------------------------
     # return unique restaurants the cusomter has reviewed
     def restaurants_reviewed(self):
-        from review import Review
-
-        review_list = Review.REVIEW_LIST
-        # print((Review.REVIEW_LIST))
-
         unique_restaurant_list = list()
 
-        for customer in Review.REVIEW_LIST:
+        for customer in self.all_review:
             if customer["full_name"] == self.full_name():
                 unique_restaurant_list.append(customer["restaurant_name"])
 
         return (
-            set(unique_restaurant_list)
+            list(set(unique_restaurant_list))
             if len(unique_restaurant_list) > 0
             else f"{self.full_name()} has not given reviews "
         )
@@ -87,25 +82,50 @@ class Customer:
     # ----------------------------------------------------------------------------------
     #   - given a **restaurant object** and a star rating (as an integer), creates a new review and associates it with that customer and restaurant.
     def add_review(self, resaurant, rating):
-        from review import Review
-
         new_review = Review(self, resaurant, rating)
 
+    # ----------------------------------------------------------------------------------
+    # returns the total number of revies a customer has given
     def customer_num_of_reviews(self):
-        from review import Review
-
-        # total_number = 0
-        # for customer_review in Review.REVIEW_LIST:
-        #     if customer_review["full_name"] == self.full_name():
-        #         total_number += 1
-        # return total_number
         return sum(
             [
                 1
-                for customer_review in Review.REVIEW_LIST
+                for customer_review in self.all_review
                 if customer_review["full_name"] == self.full_name()
             ]
         )
+
+    # ----------------------------------------------------------------------------------
+    # given a full_name return the first customer that their full name matches with the full name that is passed
+    @classmethod
+    def find_by_name(cls, name):
+        return next(
+            (
+                full_name
+                for full_name in cls.customer_instances_list
+                if full_name == name
+            ),
+            "Customer does not Exist",
+        )
+        # return cls.customer_instances_list.index(name)
+
+    # ----------------------------------------------------------------------------------
+    # given a string of a given name, returns an **list** containing all customers with that given name
+    @classmethod
+    def find_all_by_given_name(cls, name):
+        if isinstance(name, str):
+            customer_with_the_give_name = [
+                i
+                for i in cls.customer_instances_list
+                if i.split(" ")[1].lower() == name.lower()
+            ]
+            return (
+                customer_with_the_give_name
+                if len(customer_with_the_give_name) > 0
+                else f"customer with give_name ({name}) does not exist"
+            )
+        else:
+            return f" {name} should be a string not {str(type(name)).split(' ')[1].rstrip('>')}"
 
 
 customer3 = Customer("Abdi", "Jalwo")

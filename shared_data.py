@@ -6,6 +6,9 @@ from customer import Customer
 customer1 = Customer("Allan", "Kunta")
 customer2 = Customer("Camila", "Carlos")
 customer3 = Customer("Abdi", "Jalwo")
+customer4 = Customer("Allan", "Mukati")
+customer5 = Customer("Allan", "Mukati")
+customer6 = Customer("Allan", "Fransisco")
 
 # print("Customers:", [customer.full_name() for customer in Customer.all()])
 # print(customer1.given_name)
@@ -51,17 +54,42 @@ review5 = Review(customer2, restaurant2, 5)
 # ------------------- CUSTOMER list of all the customers -------------------------------------
 # return a list containing all the cutomers we have
 # print(Customer.customer_instances_list)
-# ------------------- CUSTOMER number of reviews -------------------------------------
-print(customer2.customer_num_of_reviews())
 
 
 # -----------------------------------  CUSTOMERget and add reviews------------------
-# (customer3.add_review(restaurant5, 8)) # creates a new review and associates it with that customer and restaurant.
-# print(customer3.restaurants_reviewed()) # Returns a **unique** list of all restaurants a customer has reviewed
+
+# creates a new review and associates it with that customer and restaurant.
+# -- see the number of review the customer gave hsoudl be none but adding areview, the number shour change
+# print(customer3.customer_num_of_reviews())
+# customer3.add_review(restaurant5, 8)
+# Returns a **unique** list of all restaurants a customer has reviewed
+# print(customer3.restaurants_reviewed())
 # print((all_reviews))
 # print(customer1.restaurants_reviewed())
-# --------------------- customer total number of revies --------------------------
 
+# ------------------- CUSTOMER number of reviews -------------------------------------
+# print(customer2.customer_num_of_reviews())
+# print(customer3.customer_num_of_reviews())
+# print(Customer.customer_num_of_reviews)
+
+# --------------------- customer total number of revies --------------------------
+# print(customer3.customer_num_of_reviews())
+# customer3.add_review(restaurant5, 8)
+
+# ------------------------------CUTOMER find_by_name ---------------------
+# we are picking the full name fromt he list of customers that exist in our DB
+# print(Customer.find_by_name("Mukati Allan"))
+# print(Customer.find_by_name("Mukati Allan"))
+# to see the whole list so we could count the indexes
+# print(Customer.customer_instances_list)
+# to get the index of the full name
+# print(Customer.customer_instances_list.index("Mukati Allan"))
+
+# ----------------------------- CUSTOMER Find_all_by_given_name(name -------------------------------
+# given a string of a given name, returns an **list** containing all customers with that given name
+# print(Customer.find_all_by_given_name("Allan"))
+
+#
 
 """
 [
