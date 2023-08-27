@@ -5,7 +5,7 @@
 
 ### General Description:
 
-Tthis project consists of multiple Python modules (customer.py, restaurant.py, review.py, and share_data.py) that collectively implement a system for managing customer reviews for different restaurants. It models a scenario where customers can leave reviews for various restaurants, and the system allows for the management of customers, restaurants, and reviews.
+This project consists of multiple Python modules (customer.py, restaurant.py, review.py, and share_data.py) that collectively implement a system for managing customer reviews for different restaurants. It models a scenario where customers can leave reviews for various restaurants, and the system allows for the management of customers, restaurants, and reviews.
 
 ### Overall Flow:
 
