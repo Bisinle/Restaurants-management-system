@@ -48,8 +48,11 @@ review5 = Review(customer2, restaurant2, 5)
 # Customer.get_rev(all_reviews)
 
 
-# ------------------- CUSTOMER list -------------------------------------
-print(Customer.customer_instances_list)
+# ------------------- CUSTOMER list of all the customers -------------------------------------
+# return a list containing all the cutomers we have
+# print(Customer.customer_instances_list)
+# ------------------- CUSTOMER number of reviews -------------------------------------
+print(customer2.customer_num_of_reviews())
 
 
 # -----------------------------------  CUSTOMERget and add reviews------------------

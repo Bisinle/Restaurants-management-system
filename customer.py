@@ -91,6 +91,22 @@ class Customer:
 
         new_review = Review(self, resaurant, rating)
 
+    def customer_num_of_reviews(self):
+        from review import Review
+
+        # total_number = 0
+        # for customer_review in Review.REVIEW_LIST:
+        #     if customer_review["full_name"] == self.full_name():
+        #         total_number += 1
+        # return total_number
+        return sum(
+            [
+                1
+                for customer_review in Review.REVIEW_LIST
+                if customer_review["full_name"] == self.full_name()
+            ]
+        )
+
 
 customer3 = Customer("Abdi", "Jalwo")
 # print(customer3.restaurants_reviewed())
